@@ -35,13 +35,8 @@ class ShowsFragment : Fragment() {
     private var _binding: FragmentShowsListBinding? = null
     private val binding get() = _binding!!
 
-    private val _response = MutableLiveData<String>()
-    val response: LiveData<String>
-        get() = _response
-
     val items: MutableList<Show> = ArrayList()
     lateinit var showsLoader: ShowsLoader;
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,8 +61,7 @@ class ShowsFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
 
-                adapter = ShowRecyclerViewAdapter(items) //PlaceholderContent.ITEMS
-                //load(adapter as ShowRecyclerViewAdapter);
+                adapter = ShowRecyclerViewAdapter(items)
                 showsLoader = ShowsLoader(adapter as ShowRecyclerViewAdapter, items, count, super.getChildFragmentManager());
                 showsLoader.load();
             }

@@ -10,7 +10,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ShowsLoader(private val adapter: ShowRecyclerViewAdapter, private val items: MutableList<Show>, private val count: Int, private val fragmentManager: FragmentManager) {
+class ShowsLoader(private val adapter: ShowRecyclerViewAdapter,
+                  private val items: MutableList<Show>,
+                  private val count: Int,
+                  private val fragmentManager: FragmentManager) {
 
     private val _this = this
 
@@ -41,17 +44,5 @@ class ShowsLoader(private val adapter: ShowRecyclerViewAdapter, private val item
                     )
                 }
             })
-    }
-
-    //fun createCallback() {
-
-    //}
-
-    fun onSuccess() {
-
-    }
-
-    fun onError() {
-
     }
 }
